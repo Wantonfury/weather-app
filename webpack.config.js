@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
 
 const config = {
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'docs'),
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: './src/index.html',
         }),
     ],
     module: {
