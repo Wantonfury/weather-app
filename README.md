@@ -7,3 +7,5 @@
 - CSS3
 - JavaScript
 - Webpack 5
+
+## Live demo: https://wantonfury.github.io/weather-app/
