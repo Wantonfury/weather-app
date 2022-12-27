@@ -1,5 +1,16 @@
 import '../css/index.css';
-import Background from '../js/background.js';
+import weatherAPI from './weather.js';
+import renderer from './renderer.js';
 
-Background.setTime(day);
-Background.render();
+class WeatherApp {
+    #weather;
+    
+    constructor() {
+        renderer.renderBackground();
+        
+        this.#weather = weatherAPI.getWeather('London');
+        console.log(this.#weather);
+    }
+}
+
+const app = new WeatherApp();

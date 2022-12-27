@@ -1,7 +1,7 @@
 import BackgroundDay from '../img/background-day.jpg';
 import BackgroundNight from '../img/background-night.jpg';
 
-const Background = (() => {
+const background = (() => {
     const backgroundImage = document.querySelector('#background-image');
     const backgroundGif = document.querySelector('#background-gif');
     
@@ -40,4 +40,4 @@ const Background = (() => {
     return { render, setTime, setCondition };
 })();
 
-export default Background;
+export default background;
