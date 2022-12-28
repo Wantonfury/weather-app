@@ -78,18 +78,11 @@ body{
 }
 
 .weather-data {
-    /*display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    
-    margin-top: auto;
-    width: 300px;
-    height: 500px;
-    gap: 20px;*/
-    
     display: grid;
+    justify-items: center;
+    align-items: center;
     
-    grid-template-columns: 300px 100px;
+    grid-template-columns: 250px 150px;
     grid-auto-rows: 100px;
     
     margin-top: auto;
@@ -127,6 +120,19 @@ body{
     
     width: auto;
     height: 60px;
+}
+
+#form-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#warning {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
 }
 
 #weather-condition {

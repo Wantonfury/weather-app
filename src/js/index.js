@@ -3,13 +3,37 @@ import weatherAPI from './weather.js';
 import renderer from './renderer.js';
 
 class WeatherApp {
-    #weather;
+    #location = 'London';
+    
+    render() {
+        weatherAPI.getWeather(this.#location).then(weather => {
+            const warning = document.querySelector('#warning');
+            if (warning) warning.remove();
+            
+            renderer.render(weather);
+        })
+        .catch(error => {
+            const warning = document.createElement('span');
+            warning.textContent = 'Location not found'
+            warning.id = 'warning';
+            
+            document.querySelector('#weather-search').appendChild(warning);
+        });
+    }
     
     constructor() {
-        renderer.renderBackground();
+        this.render();
         
-        this.#weather = weatherAPI.getWeather('London');
-        console.log(this.#weather);
+        const search = document.querySelector('#form-search');
+        search.addEventListener('submit', (e) => {
+            const city = e.currentTarget.querySelector('input[type=text]');
+            this.#location = city.value;
+            city.value = '';
+            
+            this.render();
+            
+            e.preventDefault();
+        });
     }
 }
 
