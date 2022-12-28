@@ -1,6 +1,6 @@
 # Weather API
 
-### This is a simple website that displays the weather at a given location.
+### This is a simple website that displays the weather at a given location. It also plays a gif appropriate for the current weather.
 
 ## Built with:
 - HTML5
